@@ -1,0 +1,100 @@
+﻿@page
+@model RestReviewSystem.Pages.Restaurants.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Restaurant</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Restaurant.RestaurantName" class="control-label"></label>
+                <input asp-for="Restaurant.RestaurantName" class="form-control" />
+                <span asp-validation-for="Restaurant.RestaurantName" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Restaurant.RestaurantId" />
+            <div class="form-group">
+                <label asp-for="Restaurant.Rating" class="control-label"></label>
+                <input asp-for="Restaurant.Rating" class="form-control" />
+                <span asp-validation-for="Restaurant.Rating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Restaurant.Avgcostofmeal" class="control-label"></label>
+                <input asp-for="Restaurant.Avgcostofmeal" class="form-control" />
+                <span asp-validation-for="Restaurant.Avgcostofmeal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Restaurant.VegChoices" class="control-label"></label>
+                <input asp-for="Restaurant.VegChoices" class="form-control" />
+                <span asp-validation-for="Restaurant.VegChoices" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Restaurant.BarAavialable" class="control-label"></label>
+                <input asp-for="Restaurant.BarAavialable" class="form-control" />
+                <span asp-validation-for="Restaurant.BarAavialable" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Restaurant.NoOFEmployees" class="control-label"></label>
+                <input asp-for="Restaurant.NoOFEmployees" class="form-control" />
+                <span asp-validation-for="Restaurant.NoOFEmployees" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Restaurant.OpeningTime" class="control-label"></label>
+                <input asp-for="Restaurant.OpeningTime" class="form-control" />
+                <span asp-validation-for="Restaurant.OpeningTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Restaurant.ClosingTime" class="control-label"></label>
+                <input asp-for="Restaurant.ClosingTime" class="form-control" />
+                <span asp-validation-for="Restaurant.ClosingTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Restaurant.TypeOfCuisine" class="control-label"></label>
+                <input asp-for="Restaurant.TypeOfCuisine" class="form-control" />
+                <span asp-validation-for="Restaurant.TypeOfCuisine" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Restaurant.PaymentMode" class="control-label"></label>
+                <input asp-for="Restaurant.PaymentMode" class="form-control" />
+                <span asp-validation-for="Restaurant.PaymentMode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Restaurant.DeliveryAvailable" class="control-label"></label>
+                <input asp-for="Restaurant.DeliveryAvailable" class="form-control" />
+                <span asp-validation-for="Restaurant.DeliveryAvailable" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Restaurant.BuffetAvailable" class="control-label"></label>
+                <input asp-for="Restaurant.BuffetAvailable" class="form-control" />
+                <span asp-validation-for="Restaurant.BuffetAvailable" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Restaurant.CafeAvailable" /> @Html.DisplayNameFor(model => model.Restaurant.CafeAvailable)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Restaurant.CustomerReviewId" class="control-label"></label>
+                <select asp-for="Restaurant.CustomerReviewId" class="form-control" asp-items="ViewBag.CustomerReviewId"></select>
+                <span asp-validation-for="Restaurant.CustomerReviewId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

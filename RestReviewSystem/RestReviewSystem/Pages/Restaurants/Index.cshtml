@@ -1,0 +1,114 @@
+﻿@page
+@model RestReviewSystem.Pages.Restaurants.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Restaurant[0].RestaurantName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Restaurant[0].Rating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Restaurant[0].Avgcostofmeal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Restaurant[0].VegChoices)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Restaurant[0].BarAavialable)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Restaurant[0].NoOFEmployees)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Restaurant[0].OpeningTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Restaurant[0].ClosingTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Restaurant[0].TypeOfCuisine)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Restaurant[0].PaymentMode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Restaurant[0].DeliveryAvailable)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Restaurant[0].BuffetAvailable)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Restaurant[0].CafeAvailable)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Restaurant[0].CustomerReview)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Restaurant) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RestaurantName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Avgcostofmeal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VegChoices)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BarAavialable)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoOFEmployees)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OpeningTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClosingTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypeOfCuisine)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentMode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeliveryAvailable)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BuffetAvailable)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CafeAvailable)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerReview.CustomerReviewId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.RestaurantId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.RestaurantId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.RestaurantId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

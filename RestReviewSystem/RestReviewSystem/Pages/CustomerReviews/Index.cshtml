@@ -1,0 +1,42 @@
+﻿@page
+@model RestReviewSystem.Pages.CustomerReviews.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerReview[0].Review)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerReview[0].Rating)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.CustomerReview) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Review)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.CustomerReviewId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.CustomerReviewId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.CustomerReviewId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

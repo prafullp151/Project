@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
@@ -8,6 +8,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using RestReviewSystem.Data;
+using Gtt.Uc.EntityFramework;
 
 namespace RestReviewSystem
 {
@@ -24,6 +27,10 @@ namespace RestReviewSystem
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+
+            //   services.AddDbContext<RestReviewSystemContext>(options =>
+            //           options.UseSqlServer(Configuration.GetConnectionString("RestReviewSystemContext")));
+            services.AddGttMem<RestReviewSystemContext>("274848e9-aee6-4f30-ba6c-fdd0c08d4213");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
