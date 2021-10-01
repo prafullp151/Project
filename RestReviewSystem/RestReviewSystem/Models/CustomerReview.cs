@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace RestReviewSystem.Models
 {
@@ -13,7 +15,8 @@ namespace RestReviewSystem.Models
         public Restaurant Restaurant { get; set; }
         public int RestaurantId { get; set; }
         public string Review { get; set; }
-        public int? Rating { get; set; }
+        [Range(0,5)]
+        public int Rating { get; set; }
         
     }
 }

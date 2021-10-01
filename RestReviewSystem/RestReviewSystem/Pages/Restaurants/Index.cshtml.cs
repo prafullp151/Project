@@ -20,10 +20,11 @@ namespace RestReviewSystem.Pages.Restaurants
         }
 
         public IList<Restaurant> Restaurant { get;set; }
-
+        public int AvgRatings { get; set; }
         public async Task OnGetAsync()
         {
             Restaurant = await _context.Restaurant.ToListAsync();
+            AvgRatings = (int)await _context.CustomerReview.AverageAsync(x => x.Rating);
         }
     }
 }

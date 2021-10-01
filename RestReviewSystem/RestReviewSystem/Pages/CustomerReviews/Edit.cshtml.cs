@@ -38,8 +38,8 @@ namespace RestReviewSystem.Pages.CustomerReviews
             {
                 return NotFound();
             }
-           ViewData["CustomerId"] = new SelectList(_context.Customer, "CustomerId", "CustomerId");
-           ViewData["RestaurantId"] = new SelectList(_context.Restaurant, "RestaurantId", "RestaurantId");
+           ViewData["CustomerId"] = new SelectList(_context.Customer, "CustomerId", "CustomerName");
+           ViewData["RestaurantId"] = new SelectList(_context.Restaurant, "RestaurantId", "RestaurantName");
             return Page();
         }
 
