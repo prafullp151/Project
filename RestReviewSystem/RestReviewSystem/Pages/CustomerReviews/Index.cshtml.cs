@@ -23,7 +23,9 @@ namespace RestReviewSystem.Pages.CustomerReviews
 
         public async Task OnGetAsync()
         {
-            CustomerReview = await _context.CustomerReview.ToListAsync();
+            CustomerReview = await _context.CustomerReview
+                .Include(c => c.Customer)
+                .Include(c => c.Restaurant).ToListAsync();
         }
     }
 }

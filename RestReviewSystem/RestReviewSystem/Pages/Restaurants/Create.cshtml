@@ -28,15 +28,15 @@
                 <input asp-for="Restaurant.Avgcostofmeal" class="form-control" />
                 <span asp-validation-for="Restaurant.Avgcostofmeal" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Restaurant.VegChoices" class="control-label"></label>
-                <input asp-for="Restaurant.VegChoices" class="form-control" />
-                <span asp-validation-for="Restaurant.VegChoices" class="text-danger"></span>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Restaurant.VegChoices" /> @Html.DisplayNameFor(model => model.Restaurant.VegChoices)
+                </label>
             </div>
-            <div class="form-group">
-                <label asp-for="Restaurant.BarAavialable" class="control-label"></label>
-                <input asp-for="Restaurant.BarAavialable" class="form-control" />
-                <span asp-validation-for="Restaurant.BarAavialable" class="text-danger"></span>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Restaurant.BarAavialable" /> @Html.DisplayNameFor(model => model.Restaurant.BarAavialable)
+                </label>
             </div>
             <div class="form-group">
                 <label asp-for="Restaurant.NoOFEmployees" class="control-label"></label>
@@ -63,24 +63,20 @@
                 <input asp-for="Restaurant.PaymentMode" class="form-control" />
                 <span asp-validation-for="Restaurant.PaymentMode" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Restaurant.DeliveryAvailable" class="control-label"></label>
-                <input asp-for="Restaurant.DeliveryAvailable" class="form-control" />
-                <span asp-validation-for="Restaurant.DeliveryAvailable" class="text-danger"></span>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Restaurant.DeliveryAvailable" /> @Html.DisplayNameFor(model => model.Restaurant.DeliveryAvailable)
+                </label>
             </div>
-            <div class="form-group">
-                <label asp-for="Restaurant.BuffetAvailable" class="control-label"></label>
-                <input asp-for="Restaurant.BuffetAvailable" class="form-control" />
-                <span asp-validation-for="Restaurant.BuffetAvailable" class="text-danger"></span>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Restaurant.BuffetAvailable" /> @Html.DisplayNameFor(model => model.Restaurant.BuffetAvailable)
+                </label>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="Restaurant.CafeAvailable" /> @Html.DisplayNameFor(model => model.Restaurant.CafeAvailable)
                 </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="Restaurant.CustomerReviewId" class="control-label"></label>
-                <select asp-for="Restaurant.CustomerReviewId" class ="form-control" asp-items="ViewBag.CustomerReviewId"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

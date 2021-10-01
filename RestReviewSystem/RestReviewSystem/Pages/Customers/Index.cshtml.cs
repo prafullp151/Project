@@ -23,8 +23,7 @@ namespace RestReviewSystem.Pages.Customers
 
         public async Task OnGetAsync()
         {
-            Customer = await _context.Customer
-                .Include(c => c.CustomerReview).ToListAsync();
+            Customer = await _context.Customer.ToListAsync();
         }
     }
 }

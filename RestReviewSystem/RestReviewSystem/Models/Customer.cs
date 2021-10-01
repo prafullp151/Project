@@ -13,8 +13,5 @@ namespace RestReviewSystem.Models
         public string DeliveryAddress { get; set; }
         public string ContactNumber { get; set; }
         public string Email { get; set; }
-        public CustomerReview CustomerReview { get; set; }
-        public int CustomerReviewId { get; set; }
-
     }
 }

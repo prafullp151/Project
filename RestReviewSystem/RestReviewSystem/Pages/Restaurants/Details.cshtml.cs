@@ -28,8 +28,7 @@ namespace RestReviewSystem.Pages.Restaurants
                 return NotFound();
             }
 
-            Restaurant = await _context.Restaurant
-                .Include(r => r.CustomerReview).FirstOrDefaultAsync(m => m.RestaurantId == id);
+            Restaurant = await _context.Restaurant.FirstOrDefaultAsync(m => m.RestaurantId == id);
 
             if (Restaurant == null)
             {

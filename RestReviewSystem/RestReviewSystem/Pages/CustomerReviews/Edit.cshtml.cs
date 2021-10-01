@@ -30,12 +30,16 @@ namespace RestReviewSystem.Pages.CustomerReviews
                 return NotFound();
             }
 
-            CustomerReview = await _context.CustomerReview.FirstOrDefaultAsync(m => m.CustomerReviewId == id);
+            CustomerReview = await _context.CustomerReview
+                .Include(c => c.Customer)
+                .Include(c => c.Restaurant).FirstOrDefaultAsync(m => m.CustomerReviewId == id);
 
             if (CustomerReview == null)
             {
                 return NotFound();
             }
+           ViewData["CustomerId"] = new SelectList(_context.Customer, "CustomerId", "CustomerId");
+           ViewData["RestaurantId"] = new SelectList(_context.Restaurant, "RestaurantId", "RestaurantId");
             return Page();
         }
 

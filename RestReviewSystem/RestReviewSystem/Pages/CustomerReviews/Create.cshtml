@@ -14,6 +14,14 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
+                <label asp-for="CustomerReview.CustomerId" class="control-label"></label>
+                <select asp-for="CustomerReview.CustomerId" class ="form-control" asp-items="ViewBag.CustomerId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerReview.RestaurantId" class="control-label"></label>
+                <select asp-for="CustomerReview.RestaurantId" class ="form-control" asp-items="ViewBag.RestaurantId"></select>
+            </div>
+            <div class="form-group">
                 <label asp-for="CustomerReview.Review" class="control-label"></label>
                 <input asp-for="CustomerReview.Review" class="form-control" />
                 <span asp-validation-for="CustomerReview.Review" class="text-danger"></span>

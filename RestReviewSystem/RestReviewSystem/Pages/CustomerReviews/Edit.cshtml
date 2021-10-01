@@ -15,6 +15,16 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="CustomerReview.CustomerReviewId" />
             <div class="form-group">
+                <label asp-for="CustomerReview.CustomerId" class="control-label"></label>
+                <select asp-for="CustomerReview.CustomerId" class="form-control" asp-items="ViewBag.CustomerId"></select>
+                <span asp-validation-for="CustomerReview.CustomerId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerReview.RestaurantId" class="control-label"></label>
+                <select asp-for="CustomerReview.RestaurantId" class="form-control" asp-items="ViewBag.RestaurantId"></select>
+                <span asp-validation-for="CustomerReview.RestaurantId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="CustomerReview.Review" class="control-label"></label>
                 <input asp-for="CustomerReview.Review" class="form-control" />
                 <span asp-validation-for="CustomerReview.Review" class="text-danger"></span>

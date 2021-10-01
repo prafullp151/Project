@@ -14,6 +14,12 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.CustomerReview[0].Customer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerReview[0].Restaurant)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.CustomerReview[0].Review)
             </th>
             <th>
@@ -25,6 +31,12 @@
     <tbody>
 @foreach (var item in Model.CustomerReview) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.CustomerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Restaurant.RestaurantId)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Review)
             </td>
