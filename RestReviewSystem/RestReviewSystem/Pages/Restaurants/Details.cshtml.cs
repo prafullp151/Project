@@ -20,6 +20,7 @@ namespace RestReviewSystem.Pages.Restaurants
         }
 
         public Restaurant Restaurant { get; set; }
+        public int AvgRatings { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,7 +30,7 @@ namespace RestReviewSystem.Pages.Restaurants
             }
 
             Restaurant = await _context.Restaurant.FirstOrDefaultAsync(m => m.RestaurantId == id);
-
+            AvgRatings = (int)await _context.CustomerReview.AverageAsync(x => x.Rating);
             if (Restaurant == null)
             {
                 return NotFound();

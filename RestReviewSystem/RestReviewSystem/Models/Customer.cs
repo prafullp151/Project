@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RestReviewSystem.Models
 {
@@ -17,7 +18,7 @@ namespace RestReviewSystem.Models
         [DisplayName("Delivery Address")]
         public string DeliveryAddress { get; set; }
         [DisplayName("Phone Number")]
-        [Phone]
+        [DataType(DataType.PhoneNumber)]
         public string ContactNumber { get; set; }
         [DisplayName("Email Address")]
         [Required]

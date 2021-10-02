@@ -16,6 +16,7 @@ namespace RestReviewSystem.Models
         [DisplayName("Avarage Rating")]
         public int AvgRating { get; set; }
         [DisplayName("How Costly $ $$ $$$")]
+        [RegularExpression([\$]+)]
         public string Avgcostofmeal { get; set; }
         [DisplayName("Has Vegeterian Entrees?")]
         public bool VegChoices { get; set; }

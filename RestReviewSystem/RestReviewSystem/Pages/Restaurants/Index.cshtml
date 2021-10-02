@@ -6,6 +6,12 @@
 }
 
 <h1>List Of Restaurants</h1>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
 
 <p>
     <a asp-page="Create">Create New</a>
@@ -56,53 +62,61 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Restaurant) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.RestaurantName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => Model.AvgRatings)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Avgcostofmeal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.VegChoices)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BarAavialable)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NoOFEmployees)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OpeningTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClosingTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TypeOfCuisine)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PaymentMode)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DeliveryAvailable)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BuffetAvailable)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CafeAvailable)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.RestaurantId">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.RestaurantId">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.RestaurantId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.Restaurant)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RestaurantName)
+                </td>
+                <td class="text-nowrap">
+                    @for (int i = 0; i < (Model.AvgRatings); i++)
+                    {
+                        <span class="glyphicon glyphicon-star"></span>
+                    }
+                    @for (int i = Model.AvgRatings; i < 5; i++)
+                    {
+                        <span class="glyphicon glyphicon-star-empty"></span>
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Avgcostofmeal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VegChoices)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BarAavialable)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NoOFEmployees)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OpeningTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ClosingTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TypeOfCuisine)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PaymentMode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DeliveryAvailable)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BuffetAvailable)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CafeAvailable)
+                </td>
+                <td class="text-nowrap">
+                    <a asp-page="./Edit" asp-route-id="@item.RestaurantId">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.RestaurantId">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.RestaurantId">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
