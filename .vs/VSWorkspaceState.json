@@ -1,12 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\RestReviewSystem",
-    "\\RestReviewSystem\\RestReviewSystem",
-    "\\RestReviewSystem\\RestReviewSystem\\Models",
-    "\\RestReviewSystem\\RestReviewSystem\\Pages",
-    "\\RestReviewSystem\\RestReviewSystem\\Pages\\CustomerReviews"
+    ""
   ],
-  "SelectedNode": "\\RestReviewSystem\\RestReviewSystem.sln",
+  "SelectedNode": "\\RestReviewSystem.sln",
   "PreviewInSolutionExplorer": false
 }
