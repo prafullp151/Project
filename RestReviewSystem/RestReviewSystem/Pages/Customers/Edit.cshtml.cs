@@ -29,7 +29,21 @@ namespace RestReviewSystem.Pages.Customers
             {
                 return NotFound();
             }
+            // ADD VALIDATIONS HERE
+            //Customer name validation
+            var custName = Customer.CustomerName;
+            var custId = Customer.CustomerId;
+            bool custExistsAlready = _context.Customer.Any(x => x.CustomerName == custName
+                                    && x.CustomerId!=custId);
+            if (custExistsAlready)
+            {
+                ModelState.AddModelError("Customer.CustomerName", "Customer Name already exists");
+            }
 
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
             Customer = await _context.Customer.FirstOrDefaultAsync(m => m.CustomerId == id);
 
             if (Customer == null)

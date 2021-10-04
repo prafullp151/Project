@@ -30,7 +30,18 @@ namespace RestReviewSystem.Pages.Restaurants
             }
 
             Restaurant = await _context.Restaurant.FirstOrDefaultAsync(m => m.RestaurantId == id);
-            AvgRatings = (int)await _context.CustomerReview.AverageAsync(x => x.Rating);
+            var custReviews = await _context.CustomerReview
+                .Where(m => m.RestaurantId == id)
+                .ToListAsync();
+            if (custReviews.Count() > 0)
+            {
+                AvgRatings = (int)await _context.CustomerReview
+                            .Where(m => m.RestaurantId == id)
+                            .AverageAsync(m => m.Rating);
+            }
+            
+           // AvgRatings = custReviews.Average();
+           //     .AverageAsync(x=>x.Rating);
             if (Restaurant == null)
             {
                 return NotFound();

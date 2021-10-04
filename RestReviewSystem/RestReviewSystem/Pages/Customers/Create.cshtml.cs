@@ -35,7 +35,19 @@ namespace RestReviewSystem.Pages.Customers
             {
                 return Page();
             }
+            // ADD VALIDATIONS HERE
+            //Customer name validation
+            var custName = Customer.CustomerName;
+            bool custExistsAlready = _context.Customer.Any(x => x.CustomerName == custName);
+            if (custExistsAlready)
+            {
+                ModelState.AddModelError("Customer.CustomerName","Customer Name already exists");
+            }
 
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
             _context.Customer.Add(Customer);
             await _context.SaveChangesAsync();
 

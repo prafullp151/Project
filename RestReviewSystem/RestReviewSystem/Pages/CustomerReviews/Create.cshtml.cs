@@ -21,8 +21,8 @@ namespace RestReviewSystem.Pages.CustomerReviews
 
         public IActionResult OnGet()
         {
-        ViewData["CustomerId"] = new SelectList(_context.Customer, "CustomerId", "CustomerId");
-        ViewData["RestaurantId"] = new SelectList(_context.Restaurant, "RestaurantId", "RestaurantId");
+        ViewData["CustomerId"] = new SelectList(_context.Customer, "CustomerId", "CustomerName");
+        ViewData["RestaurantId"] = new SelectList(_context.Restaurant, "RestaurantId", "RestaurantName");
             return Page();
         }
 

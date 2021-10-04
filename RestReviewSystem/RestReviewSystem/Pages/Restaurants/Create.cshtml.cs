@@ -35,6 +35,19 @@ namespace RestReviewSystem.Pages.Restaurants
             {
                 return Page();
             }
+            // ADD VALIDATIONS HERE
+            //Restaurant name validation
+            var restName = Restaurant.RestaurantName;
+            bool restExistsAlready = _context.Restaurant.Any(x=>x.RestaurantName==restName);
+            if (restExistsAlready)
+            {
+                ModelState.AddModelError("Restaurant.RestaurantName", "Restaurant Name already exists");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
 
             _context.Restaurant.Add(Restaurant);
             await _context.SaveChangesAsync();
