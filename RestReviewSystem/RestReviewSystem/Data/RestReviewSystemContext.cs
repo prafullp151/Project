@@ -19,5 +19,7 @@ namespace RestReviewSystem.Data
         public DbSet<RestReviewSystem.Models.CustomerReview> CustomerReview { get; set; }
 
         public DbSet<RestReviewSystem.Models.Restaurant> Restaurant { get; set; }
+
+        public DbSet<RestReviewSystem.Models.ReviewCategory> ReviewCategory { get; set; }
     }
 }

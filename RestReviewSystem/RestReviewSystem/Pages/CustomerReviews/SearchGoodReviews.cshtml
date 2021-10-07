@@ -1,0 +1,81 @@
+﻿@page
+@model RestReviewSystem.Pages.CustomerReviews.SearchGoodReviewsModel
+
+@{
+    ViewData["Title"] = "SearchGoodReviews";
+}
+
+<h1>SearchGoodReviews</h1>
+<div class="row">
+    <div class="col">
+        <form action="" method="get" class="form-inline">
+            <input asp-for="Query" class="form-control mr-sm-2 mb-2" placeholder="Search Good Reviews" />
+            <button type="submit" class="btn btn-primary mb-2">Search</button>
+        </form>
+    </div>
+</div>
+
+@if (Model.SearchCompleted)
+{
+    if (Model.CustomerReview.Any()) { 
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CustomerReview[0].Customer)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CustomerReview[0].Restaurant)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CustomerReview[0].Review)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CustomerReview[0].Rating)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CustomerReview[0].ReviewCategoryId)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.CustomerReview)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CustomerId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RestaurantId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Review)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Rating)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ReviewCategoryId)
+                        </td>
+                        <td class="text-nowrap">
+                            <a asp-page="./Edit" asp-route-id="@item.CustomerReviewId">Edit</a> |
+                            <a asp-page="./Details" asp-route-id="@item.CustomerReviewId">Details</a> |
+                            <a asp-page="./Delete" asp-route-id="@item.CustomerReviewId">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+                else
+                {
+                    <div class="row">
+                        <div class="col">
+                            <div class="alert alert-info">
+                                No reviews with rating  <strong>@Model.Query</strong>
+                            </div>
+                        </div>
+                    </div>
+                }
+}

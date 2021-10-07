@@ -11,7 +11,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark border-bottom box-shadow mb-3">
             <div class="container card-img" style="background-color:coral; ">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">RestReviewSystem</a>
+                <a class="navbar-brand" asp-area="" asp-page="/Index"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -25,7 +25,13 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Customers/Index">Customers</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/CustomerReviews/Index">CustomerReviews</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/CustomerReviews/SearchGoodReviews">Search Reviews</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/CustomerReviews/Index">Customer Reviews</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/ReviewCategories/Index">Review Categories</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Restaurants/Index">Restaurants</a>

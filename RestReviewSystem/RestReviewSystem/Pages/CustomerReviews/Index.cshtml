@@ -20,6 +20,9 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.CustomerReview[0].CustomerReviewId)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.CustomerReview[0].Customer)
             </th>
             <th>
@@ -37,32 +40,35 @@
     <tbody>
         @foreach (var item in Model.CustomerReview)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Customer.CustomerName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Restaurant.RestaurantName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Review)
-                </td>
-                <td class="text-nowrap">
-                    @for (int i = 0; i < (item.Rating); i++)
-                    {
-                        <span class="glyphicon glyphicon-star"></span>
-                    }
-                    @for (int i = item.Rating; i < 5; i++)
-                    {
-                        <span class="glyphicon glyphicon-star-empty"></span>
-                    }
-                </td>
-                <td class="text-nowrap">
-                    <a asp-page="./Edit" asp-route-id="@item.CustomerReviewId">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.CustomerReviewId">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.CustomerReviewId">Delete</a>
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerReviewId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Restaurant.RestaurantName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Review)
+            </td>
+            <td class="text-nowrap">
+                @for (int i = 0; i < (item.Rating); i++)
+                {
+                    <span class="glyphicon glyphicon-star"></span>
+                }
+                @for (int i = item.Rating; i < 5; i++)
+                {
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                }
+            </td>
+            <td class="text-nowrap">
+                <a asp-page="./Edit" asp-route-id="@item.CustomerReviewId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.CustomerReviewId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.CustomerReviewId">Delete</a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>

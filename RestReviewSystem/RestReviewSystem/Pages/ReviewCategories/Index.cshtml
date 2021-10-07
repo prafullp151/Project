@@ -1,0 +1,54 @@
+﻿@page
+@model RestReviewSystem.Pages.ReviewCategories.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Categorical Review</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ReviewCategory[0].CustomerReviewId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReviewCategory[0].FoodQuality)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReviewCategory[0].Service)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReviewCategory[0].Cleanliness)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ReviewCategory) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerReviewId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FoodQuality)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Service)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cleanliness)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ReviewCategoryId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ReviewCategoryId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ReviewCategoryId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
