@@ -7,9 +7,12 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using RestReviewSystem.Data;
 using RestReviewSystem.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace RestReviewSystem.Pages.Customers
 {
+    //[Authorize(Roles = "Administrator")]
+
     public class IndexModel : PageModel
     {
         private readonly RestReviewSystem.Data.RestReviewSystemContext _context;
