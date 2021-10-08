@@ -45,32 +45,42 @@
 </div>
 @if (Model.Customer.CustomerReviews.Any())
 {
-    <div>
-        <table class="table table-bordered">
-            <thead>
+<div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Customer.CustomerReviews[0].CustomerReviewId)</th>
+                <th>@Html.DisplayNameFor(model => model.Customer.CustomerReviews[0].Rating)</th>
+                <th>@Html.DisplayNameFor(model => model.Customer.CustomerReviews[0].Review)</th>
+                <th>@Html.DisplayNameFor(model => model.Customer.CustomerReviews[0].Customer.CustomerName)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Customer.CustomerReviews)
+            {
                 <tr>
-                    <th>@Html.DisplayNameFor(model => model.Customer.CustomerReviews[0].CustomerReviewId)</th>
-                    <th>@Html.DisplayNameFor(model => model.Customer.CustomerReviews[0].Rating)</th>
-                    <th>@Html.DisplayNameFor(model => model.Customer.CustomerReviews[0].Review)</th>
-                    <th>@Html.DisplayNameFor(model => model.Customer.CustomerReviews[0].Customer.CustomerName)</th>
+                    <td>@Html.DisplayFor(modelItem => item.CustomerReviewId)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Rating)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Review)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Customer.CustomerName)</td>
+                    <td>
+                        <a asp-page="/CustomerReviews/Details" asp-route-id="@item.CustomerId">Details</a>
+                    </td>
                 </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model.Customer.CustomerReviews)
-                {
-                    <tr>
-                        <td>@Html.DisplayFor(modelItem => item.CustomerReviewId)</td>
-                        <td>@Html.DisplayFor(modelItem => item.Rating)</td>
-                        <td>@Html.DisplayFor(modelItem => item.Review)</td>
-                        <td>@Html.DisplayFor(modelItem => item.Customer.CustomerName)</td>
-                        <td>
-                            <a asp-page="/CustomerReviews/Details" asp-route-id="@item.CustomerId">Details</a>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
+            }
+        <tr>
+            <th>Total Of Rating</th>
+            <th>@Model.Customer.CustomerReviews.Sum(x => x.Rating).ToString()</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        </tbody>
+    </table>
+    <strong>@Model.Customer.CustomerReviews.Count Reviews Found</strong>
+
+</div>
 }
 else
 {

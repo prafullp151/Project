@@ -129,8 +129,16 @@
                     </td>
                 </tr>
                 }
+            <tr>
+                <th>Total of Rating</th>
+                <th>@Model.Restaurant.CustomerReviews.Sum(x => x.Rating).ToString()</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
             </tbody>
         </table>
+        <strong>@Model.Restaurant.CustomerReviews.Count Reviews Found</strong>
     </div>
 }
             else
