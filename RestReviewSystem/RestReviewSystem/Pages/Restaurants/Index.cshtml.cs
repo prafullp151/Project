@@ -21,20 +21,20 @@ namespace RestReviewSystem.Pages.Restaurants
 
         public IList<Restaurant> Restaurant { get;set; }
         public int AvgRatings { get; set; }
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(int? id)
         {
-            //Restaurant = await _context.Restaurant.ToListAsync();
-            //var custReviews = await _context.CustomerReview
-            //    .Where(m => m.RestaurantId == id)
-            //    .ToListAsync();
-            //if (custReviews.Count() > 0)
-            //{
-            //    AvgRatings = (int)await _context.CustomerReview
-            //                .Where(m => m.RestaurantId == id)
-            //                .AverageAsync(m => m.Rating);
-            //}
             Restaurant = await _context.Restaurant.ToListAsync();
-            AvgRatings = (int)await _context.CustomerReview.AverageAsync(x => x.Rating);
+            //AvgRatings = (int)await _context.CustomerReview.AverageAsync(x => x.Rating);
+            //Calculate the Avarage rating for a restaurant
+            var custReviews = await _context.CustomerReview
+                .Where(m => m.RestaurantId == id)
+                .ToListAsync();
+            if (custReviews.Count() > 0)
+            {
+                AvgRatings = (int)await _context.CustomerReview
+                            .Where(m => m.RestaurantId == id)
+                            .AverageAsync(m => m.Rating);
+            }
         }
     }
 }
