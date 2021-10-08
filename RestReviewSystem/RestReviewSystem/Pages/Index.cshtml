@@ -4,7 +4,113 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-center" style="padding-top:50px">
+    <h1 class="display-4">Cafe Advisor</h1>
+    <p>Discover the best restaurant for <a href="">Dine outs and Deliveries</a></p>
 </div>
+
+<div id="ImageCarouselCSS" class="carousel slide" data-ride="carousel">
+
+
+    <div class="inner-item">
+        <ol class="carousel-indicators">
+
+            <li data-target="#ImageCarouselCSS" data-slide-to="0" class="active"></li>
+            <li data-target="#ImageCarouselCSS" data-slide-to="1"></li>
+            <li data-target="#ImageCarouselCSS" data-slide-to="2"></li>
+            <li data-target="#ImageCarouselCSS" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner">
+            <table>
+                <thead>
+                    <tr>
+
+
+                        <div class="carousel-item active" style="width:100%">
+                            <img src="~/Images/coffee.png" class="d-block w-100" />
+                            <div class="carousel-caption d-none d-md-block">
+                                @*<div class="search-container">
+                                    <form action="/action_page.php">
+                                        <input type="text" placeholder="Rate your fav restaurant" name="search">
+                                        <button type="submit"><i class="fa fa-search"></i></button>
+                                    </form>
+                                </div>*@
+                            </div>
+                        </div>
+                    </tr>
+                    <tr>
+
+                        <div class="carousel-item" style="align-items: center">
+                            <img src="~/Images/Smoked-Chicken.jpg" class="d-block w-100" />
+
+                        </div>
+                    </tr>
+
+                    <tr>
+                        <div class="carousel-item" style="align-items: center ">
+                            <img src="~/Images/mushroom-cream-cheese-pizza.jpg"class="d-block w-100" />
+
+                        </div>
+
+
+                    </tr>
+                    <tr>
+
+                        <div class="carousel-item" style="align-items: center;">
+                            <img src="~/Images/Vegetables.jpg" class="d-block w-100" />
+
+                        </div>
+                    </tr>
+                    <tr>
+                    <div class="carousel-item" style="align-items: center ">
+                        <img src="~/Images/Pizza.jpg" class="d-block w-100" />
+
+                    </div>
+                        </tr>
+                </thead>
+
+            </table>
+
+        </div>
+    </div>
+
+</div>
+<p></p>
+<div style="padding:20px">
+    <table>
+        <thead style="border-spacing: 90em; padding-left:60px; margin:20px; ">
+            <tr>
+                <th> <img src="~/Images/Restaurants/01.jpg" /><p>William Wale,Cincinnati</p></th>
+                <th> <img src="~/Images/Restaurants/10.jpg" /><p>Meritage,Miami</p></th>
+                <th>  <img src="~/Images/Restaurants/2.jpg" /><p>Laurell,Miami</p></th>
+            </tr>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <tr>
+                <td><img src="~/Images/Restaurants/0.png" /><p>Nelson Cafe</p></td>
+                <td> <img src="~/Images/Restaurants/1.jpg" /><p>Chicken Wings</p></td>
+                <td>  <img src="~/Images/Restaurants/13.jpg" /><p>Zingers</p></td>
+            </tr>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <tr>
+                <th><img src="~/Images/Restaurants/03.jpg" /><p>Beefy Saturday</p></th>
+                <th><img src="~/Images/Restaurants/5.jpg" /><p>Kentucky</p></th>
+                <th><img src="~/Images/Restaurants/6.jpg" /><p>Cafe Cincinnati</p></th>
+            </tr>
+
+
+        </thead>
+    </table>
+
+
+    </div>
+<script src="app.js"></script>
+

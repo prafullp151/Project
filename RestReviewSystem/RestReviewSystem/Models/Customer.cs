@@ -24,5 +24,6 @@ namespace RestReviewSystem.Models
         [Required]
         [EmailAddress]
         public string Email { get; set; }
+        public List<CustomerReview> CustomerReviews { get; set; }
     }
 }

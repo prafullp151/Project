@@ -41,7 +41,15 @@ namespace RestReviewSystem.Pages.Customers
             bool custExistsAlready = _context.Customer.Any(x => x.CustomerName == custName);
             if (custExistsAlready)
             {
-                ModelState.AddModelError("Customer.CustomerName","Customer Name already exists");
+                ModelState.AddModelError("Customer.CustomerName", "Customer Name already exists");
+            }
+
+            //Customer contact validation
+            var custPhone = Customer.ContactNumber;
+            bool custPhoneNonUSA = _context.Customer.Any(x => x.ContactNumber.StartsWith('1'));
+            if (custPhoneNonUSA)
+            {
+                ModelState.AddModelError("Customer.ContactNumber", "Customer must be in USA");
             }
 
             if (!ModelState.IsValid)

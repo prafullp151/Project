@@ -28,7 +28,9 @@ namespace RestReviewSystem.Pages.Customers
                 return NotFound();
             }
 
-            Customer = await _context.Customer.FirstOrDefaultAsync(m => m.CustomerId == id);
+            Customer = await _context.Customer
+                .Include(m=>m.CustomerReviews)
+                .FirstOrDefaultAsync(m => m.CustomerId == id);
 
             if (Customer == null)
             {

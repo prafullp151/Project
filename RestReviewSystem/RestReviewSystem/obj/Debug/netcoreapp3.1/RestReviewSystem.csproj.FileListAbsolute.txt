@@ -449,3 +449,5 @@ C:\Users\chand\source\repos\prafullp151\Project\RestReviewSystem\RestReviewSyste
 C:\Users\chand\source\repos\prafullp151\Project\RestReviewSystem\RestReviewSystem\obj\Debug\netcoreapp3.1\Razor\Pages\ReviewCategories\Edit.cshtml.g.cs
 C:\Users\chand\source\repos\prafullp151\Project\RestReviewSystem\RestReviewSystem\obj\Debug\netcoreapp3.1\Razor\Pages\ReviewCategories\Index.cshtml.g.cs
 C:\Users\chand\source\repos\prafullp151\Project\RestReviewSystem\RestReviewSystem\obj\Debug\netcoreapp3.1\Razor\Pages\CustomerReviews\SearchGoodReviews.cshtml.g.cs
+C:\Users\chand\source\repos\prafullp151\Project\RestReviewSystem\RestReviewSystem\obj\Debug\netcoreapp3.1\Razor\Pages\AboutUs.cshtml.g.cs
+C:\Users\chand\source\repos\prafullp151\Project\RestReviewSystem\RestReviewSystem\obj\Debug\netcoreapp3.1\Razor\Pages\Help.cshtml.g.cs

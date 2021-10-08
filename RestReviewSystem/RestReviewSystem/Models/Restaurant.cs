@@ -39,5 +39,6 @@ namespace RestReviewSystem.Models
         public bool BuffetAvailable { get; set; }
         [DisplayName("Has cafe?")]
         public bool CafeAvailable { get; set; }
+        public List<CustomerReview> CustomerReviews { get; set; }
     }
 }

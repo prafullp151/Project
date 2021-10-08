@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using RestReviewSystem.Data;
 using RestReviewSystem.Models;
+using System.ComponentModel.DataAnnotations;
+
 
 namespace RestReviewSystem.Pages.CustomerReviews
 {
@@ -21,10 +23,11 @@ namespace RestReviewSystem.Pages.CustomerReviews
 
         public IList<CustomerReview> CustomerReview { get;set; }
         public bool SearchCompleted { get; set; }
+
         public string Query { get; set; }
         public async Task OnGetAsync(string query)
         {
-            Query = query;
+            //Query = query;
             if (!string.IsNullOrWhiteSpace(query))
             {
                 SearchCompleted = true;

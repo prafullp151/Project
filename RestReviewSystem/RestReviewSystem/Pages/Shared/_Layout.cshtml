@@ -3,15 +3,15 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - RestReviewSystem</title>
+    <title>@ViewData["Title"] - Lets review your favourite restaurant</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
-<body class="card-img" style="background-color:antiquewhite; padding-bottom:120px"  >
+<body class="card-img" style="background-color: #C9A9A6; padding-bottom: 120px ">
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark border-bottom box-shadow mb-3">
             <div class="container card-img" style="background-color:coral; ">
-                <a class="navbar-brand" asp-area="" asp-page="/Index"></a>
+                @*<a class="navbar-brand" asp-area="" asp-page="/Index"></a>*@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -22,22 +22,28 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/AboutUs">About Us</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Customers/Index">Customers</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/CustomerReviews/SearchGoodReviews">Search Reviews</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/CustomerReviews/Index">Reviews</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/CustomerReviews/Index">Customer Reviews</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/ReviewCategories/Index">Review Categories</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/ReviewCategories/Index">Review Category</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Restaurants/Index">Restaurants</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                        </li>
+                        <li class="nav-item align-content-end">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Help">Help</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/CustomerReviews/SearchGoodReviews">Search</a>
                         </li>
                     </ul>
                 </div>
@@ -49,17 +55,20 @@
             @RenderBody()
         </main>
     </div>
-    
-    <footer class="border-top footer text-muted position-absolute" >
-        <div class="container">
-            &copy; 2021 - RestReviewSystem - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
-    </footer>
+
+
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @RenderSection("Scripts", required: false)
+
+
+    <footer class="border-top footer text-muted position-absolute">
+        <div class="container">
+            &copy; 2021 - RestReviewSystem - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
 </body>
 </html>
