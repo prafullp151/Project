@@ -18,6 +18,18 @@
             @Html.DisplayFor(model => model.ReviewCategory.CustomerReviewId)
         </dd>
         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CustomerReview.Customer.CustomerName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CustomerReview.Customer.CustomerName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CustomerReview.Restaurant.RestaurantName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CustomerReview.Restaurant.RestaurantName)
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.ReviewCategory.FoodQuality)
         </dt>
         <dd class="col-sm-10">

@@ -1,6 +1,5 @@
-﻿@page
+﻿@page 
 @model RestReviewSystem.Pages.ReviewCategories.IndexModel
-
 @{
     ViewData["Title"] = "Index";
 }
@@ -29,7 +28,8 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.ReviewCategory) {
+        @foreach (var item in Model.ReviewCategory)
+        {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.CustomerReviewId)
@@ -49,6 +49,6 @@
                 <a asp-page="./Delete" asp-route-id="@item.ReviewCategoryId">Delete</a>
             </td>
         </tr>
-}
+        }
     </tbody>
 </table>

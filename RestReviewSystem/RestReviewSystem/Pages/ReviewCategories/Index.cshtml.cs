@@ -20,7 +20,6 @@ namespace RestReviewSystem.Pages.ReviewCategories
         }
 
         public IList<ReviewCategory> ReviewCategory { get;set; }
-
         public async Task OnGetAsync()
         {
             ReviewCategory = await _context.ReviewCategory.ToListAsync();

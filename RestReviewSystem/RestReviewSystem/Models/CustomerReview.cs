@@ -17,7 +17,8 @@ namespace RestReviewSystem.Models
         public string Review { get; set; }
         [Range(0,5)]
         public int Rating { get; set; }
-        public int ReviewCategoryId { get; set; }
+        //public ReviewCategory ReviewCategory { get; set; }
+        //public int ReviewCategoryId { get; set; }
 
     }
 }

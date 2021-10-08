@@ -1,10 +1,9 @@
-﻿@page
+﻿@page 
 @model RestReviewSystem.Pages.Restaurants.IndexModel
 
 @{
     ViewData["Title"] = "Index";
 }
-
 <h1>List Of Restaurants</h1>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,9 +21,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Restaurant[0].RestaurantName)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Restaurant[0].AvgRating)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Restaurant[0].Avgcostofmeal)
             </th>
@@ -68,7 +67,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.RestaurantName)
                 </td>
-                <td class="text-nowrap">
+                @*<td class="text-nowrap">
                     @for (int i = 0; i < (Model.AvgRatings); i++)
                     {
                         <span class="glyphicon glyphicon-star"></span>
@@ -77,7 +76,7 @@
                     {
                         <span class="glyphicon glyphicon-star-empty"></span>
                     }
-                </td>
+                </td>*@
                 <td>
                     @Html.DisplayFor(modelItem => item.Avgcostofmeal)
                 </td>

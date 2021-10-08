@@ -20,6 +20,7 @@ namespace RestReviewSystem.Pages.ReviewCategories
         }
 
         public ReviewCategory ReviewCategory { get; set; }
+        public CustomerReview CustomerReview { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,7 +30,8 @@ namespace RestReviewSystem.Pages.ReviewCategories
             }
 
             ReviewCategory = await _context.ReviewCategory.FirstOrDefaultAsync(m => m.ReviewCategoryId == id);
-
+            var CustRevId = ReviewCategory.CustomerReviewId;
+            CustomerReview = _context.CustomerReview.FirstOrDefault(x=>x.CustomerReviewId==CustRevId);
             if (ReviewCategory == null)
             {
                 return NotFound();

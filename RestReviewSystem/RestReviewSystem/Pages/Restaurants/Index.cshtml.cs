@@ -24,6 +24,7 @@ namespace RestReviewSystem.Pages.Restaurants
         public async Task OnGetAsync(int? id)
         {
             Restaurant = await _context.Restaurant.ToListAsync();
+            //ViewData["id"] = id;
             //AvgRatings = (int)await _context.CustomerReview.AverageAsync(x => x.Rating);
             //Calculate the Avarage rating for a restaurant
             var custReviews = await _context.CustomerReview

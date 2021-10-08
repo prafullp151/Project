@@ -19,5 +19,6 @@ namespace RestReviewSystem.Models
         public int Service { get; set; }
         [Range(0, 5)]
         public int Cleanliness { get; set; }
+        public CustomerReview CustomerReview { get; set; }
     }
 }
