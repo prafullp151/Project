@@ -20,22 +20,43 @@ namespace RestReviewSystem.Pages.Restaurants
         }
 
         public IList<Restaurant> Restaurant { get;set; }
-        public int AvgRatings { get; set; }
-        public async Task OnGetAsync(int? id)
+        public IList<CustomerReview> custReviews { get; set; }
+        public List<int> AvgRatings = new List<int>();
+        public async Task OnGetAsync()
         {
             Restaurant = await _context.Restaurant.ToListAsync();
-            //ViewData["id"] = id;
-            //AvgRatings = (int)await _context.CustomerReview.AverageAsync(x => x.Rating);
             //Calculate the Avarage rating for a restaurant
-            var custReviews = await _context.CustomerReview
-                .Where(m => m.RestaurantId == id)
-                .ToListAsync();
-            if (custReviews.Count() > 0)
+            if (Restaurant.Count() > 0)
             {
-                AvgRatings = (int)await _context.CustomerReview
-                            .Where(m => m.RestaurantId == id)
-                            .AverageAsync(m => m.Rating);
+                var k = 0;
+                foreach (var item in Restaurant)
+                {
+                   custReviews = await _context.CustomerReview
+                        .Where(m => m.RestaurantId == item.RestaurantId)
+                        .ToListAsync();
+                    if (custReviews.Count() > 0)
+                    {
+                        var AvgRate = (int)custReviews.Average(x => x.Rating);
+                        //AvgRatings = AvgRate;
+                        //AvgRatings?.Append(AvgRate);
+                        AvgRatings?.Add(AvgRate);
+                    }
+                    else
+                    {
+                        AvgRatings?.Add(0);
+                    }
+
+                    //foreach(var item1 in custReviews)
+                    //{
+                    //    AvgRatings = item1
+                    //                .AverageAsync(m => m.Rating)
+                    //                .T;
+                    //}
+                }
+                k = k + 1;
             }
+            //AvgRatings = (int)await _context.CustomerReview.AverageAsync(x => x.Rating);
+
         }
     }
 }
