@@ -28,7 +28,6 @@ namespace RestReviewSystem.Pages.Restaurants
             //Calculate the Avarage rating for a restaurant
             if (Restaurant.Count() > 0)
             {
-                var k = 0;
                 foreach (var item in Restaurant)
                 {
                    custReviews = await _context.CustomerReview
@@ -37,8 +36,6 @@ namespace RestReviewSystem.Pages.Restaurants
                     if (custReviews.Count() > 0)
                     {
                         var AvgRate = (int)custReviews.Average(x => x.Rating);
-                        //AvgRatings = AvgRate;
-                        //AvgRatings?.Append(AvgRate);
                         AvgRatings?.Add(AvgRate);
                     }
                     else
@@ -46,16 +43,8 @@ namespace RestReviewSystem.Pages.Restaurants
                         AvgRatings?.Add(0);
                     }
 
-                    //foreach(var item1 in custReviews)
-                    //{
-                    //    AvgRatings = item1
-                    //                .AverageAsync(m => m.Rating)
-                    //                .T;
-                    //}
                 }
-                k = k + 1;
             }
-            //AvgRatings = (int)await _context.CustomerReview.AverageAsync(x => x.Rating);
 
         }
     }
