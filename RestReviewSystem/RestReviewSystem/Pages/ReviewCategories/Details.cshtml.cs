@@ -31,7 +31,10 @@ namespace RestReviewSystem.Pages.ReviewCategories
 
             ReviewCategory = await _context.ReviewCategory.FirstOrDefaultAsync(m => m.ReviewCategoryId == id);
             var CustRevId = ReviewCategory.CustomerReviewId;
-            CustomerReview = _context.CustomerReview.FirstOrDefault(x=>x.CustomerReviewId==CustRevId);
+            CustomerReview = _context.CustomerReview
+                    .Include(c => c.Customer)
+                    .Include(c => c.Restaurant)
+                    .FirstOrDefault(x=>x.CustomerReviewId==CustRevId);
             if (ReviewCategory == null)
             {
                 return NotFound();

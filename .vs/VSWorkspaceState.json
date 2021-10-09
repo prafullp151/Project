@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\RestReviewSystem",
+    "\\RestReviewSystem\\RestReviewSystem",
+    "\\RestReviewSystem\\RestReviewSystem\\Pages",
+    "\\RestReviewSystem\\RestReviewSystem\\Pages\\ReviewCategories"
   ],
-  "SelectedNode": "\\RestReviewSystem.sln",
+  "SelectedNode": "\\RestReviewSystem\\RestReviewSystem\\Pages\\ReviewCategories\\Index.cshtml",
   "PreviewInSolutionExplorer": false
 }

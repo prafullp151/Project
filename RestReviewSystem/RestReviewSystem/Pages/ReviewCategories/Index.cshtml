@@ -1,8 +1,15 @@
-﻿@page 
+﻿@page
+
 @model RestReviewSystem.Pages.ReviewCategories.IndexModel
 @{
     ViewData["Title"] = "Index";
 }
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
 
 <h1>Categorical Review</h1>
 
@@ -13,7 +20,10 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.ReviewCategory[0].CustomerReviewId)
+                @Html.DisplayNameFor(model => model.ReviewCategory[0].CustomerReview.Customer.CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReviewCategory[0].CustomerReview.Restaurant.RestaurantName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ReviewCategory[0].FoodQuality)
@@ -30,25 +40,49 @@
     <tbody>
         @foreach (var item in Model.ReviewCategory)
         {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CustomerReviewId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FoodQuality)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Service)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cleanliness)
-            </td>
-            <td class="text-nowrap">
-                <a asp-page="./Edit" asp-route-id="@item.ReviewCategoryId">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ReviewCategoryId">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ReviewCategoryId">Delete</a>
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerReview.Customer.CustomerName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerReview.Restaurant.RestaurantName)
+                </td>
+                <td>
+                    @for (int i = 0; i < (item.FoodQuality); i++)
+                    {
+                        <span class="glyphicon glyphicon-star"></span>
+                    }
+                    @for (int i = item.FoodQuality; i < 5; i++)
+                    {
+                        <span class="glyphicon glyphicon-star-empty"></span>
+                    }
+                </td>
+                <td>
+                    @for (int i = 0; i < (item.Service); i++)
+                    {
+                        <span class="glyphicon glyphicon-star"></span>
+                    }
+                    @for (int i = item.Service; i < 5; i++)
+                    {
+                        <span class="glyphicon glyphicon-star-empty"></span>
+                    }
+                </td>
+                <td>
+                    @for (int i = 0; i < (item.Cleanliness); i++)
+                    {
+                        <span class="glyphicon glyphicon-star"></span>
+                    }
+                    @for (int i = item.Cleanliness; i < 5; i++)
+                    {
+                        <span class="glyphicon glyphicon-star-empty"></span>
+                    }
+                </td>
+                <td class="text-nowrap">
+                    <a asp-page="./Edit" asp-route-id="@item.ReviewCategoryId">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.ReviewCategoryId">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ReviewCategoryId">Delete</a>
+                </td>
+            </tr>
         }
     </tbody>
 </table>

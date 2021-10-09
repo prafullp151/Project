@@ -33,6 +33,8 @@ namespace RestReviewSystem.Pages.CustomerReviews
                 SearchCompleted = true;
                 var intq = Convert.ToInt16(query);
                 CustomerReview = await _context.CustomerReview
+                    .Include(c => c.Customer)
+                    .Include(c => c.Restaurant)
                     .Where(x => x.Rating.Equals(intq)).ToListAsync();
                    
             }

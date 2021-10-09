@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\chand\\Source\\Repos\\prafullp151\\Project\\RestReviewSystem\\RestReviewSystem\\RestReviewSystem.csproj": {}
+    "C:\\Users\\chand\\source\\repos\\prafullp151\\Project\\RestReviewSystem\\RestReviewSystem\\RestReviewSystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\chand\\Source\\Repos\\prafullp151\\Project\\RestReviewSystem\\RestReviewSystem\\RestReviewSystem.csproj": {
+    "C:\\Users\\chand\\source\\repos\\prafullp151\\Project\\RestReviewSystem\\RestReviewSystem\\RestReviewSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chand\\Source\\Repos\\prafullp151\\Project\\RestReviewSystem\\RestReviewSystem\\RestReviewSystem.csproj",
+        "projectUniqueName": "C:\\Users\\chand\\source\\repos\\prafullp151\\Project\\RestReviewSystem\\RestReviewSystem\\RestReviewSystem.csproj",
         "projectName": "RestReviewSystem",
-        "projectPath": "C:\\Users\\chand\\Source\\Repos\\prafullp151\\Project\\RestReviewSystem\\RestReviewSystem\\RestReviewSystem.csproj",
+        "projectPath": "C:\\Users\\chand\\source\\repos\\prafullp151\\Project\\RestReviewSystem\\RestReviewSystem\\RestReviewSystem.csproj",
         "packagesPath": "C:\\Users\\chand\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chand\\Source\\Repos\\prafullp151\\Project\\RestReviewSystem\\RestReviewSystem\\obj\\",
+        "outputPath": "C:\\Users\\chand\\source\\repos\\prafullp151\\Project\\RestReviewSystem\\RestReviewSystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\chand\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -20,9 +20,20 @@ namespace RestReviewSystem.Pages.ReviewCategories
         }
 
         public IList<ReviewCategory> ReviewCategory { get;set; }
+        public IList<CustomerReview> CustomerReview { get; set; }
         public async Task OnGetAsync()
         {
             ReviewCategory = await _context.ReviewCategory.ToListAsync();
+            foreach (var item in ReviewCategory)
+            {
+                var CustRevId = item.CustomerReviewId;
+                CustomerReview = _context.CustomerReview
+                    .Include(c => c.Customer)
+                    .Include(c => c.Restaurant)
+                    .Where(x => x.CustomerReviewId == CustRevId)
+                    .ToList();
+            }
+            
         }
     }
 }
